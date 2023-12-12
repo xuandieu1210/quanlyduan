@@ -84,7 +84,7 @@
     
   </div>
 </div> -->
-   <div class="row justify-content-left">
+<!-- <div class="row justify-content-left">
 
 <div class="container">
   <h2>Horizontal form</h2>
@@ -115,6 +115,106 @@
     </div>
   </form>
 </div>
+ -->
+</br>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-8 col-md-offset-1">
+        <div class="container">
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Tên dự án:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Mô tả:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Chủ đầu tư:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Địa chỉ:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Thông tin lãnh đạo:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Thông tin kế toán:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Thông tin kỹ thuật:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Ngày hợp đồng:</label>
+            <div class="col-sm-4">          
+              <input type="date" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+             <label class="control-label col-sm-2" for="pwd">Ngày kết thúc:</label>
+            <div class="col-sm-4">          
+              <input type="date" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Giá trị hợp đồng:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-2 text-left"> 
+      <h1>Welcome</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+      <h3>Test</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 </div>
    <div class="row justify-content-left">
