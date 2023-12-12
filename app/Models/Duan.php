@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Duan extends Model
 {
     use HasFactory;
     protected $fillable = [
 		'tenduan',
-		'mota'
+		'mota',
 		'tenkhachhang',
 		'diachi',
 		'thongtinlanhdao',
@@ -23,4 +24,15 @@ class Duan extends Model
 		'giatrihopdongchuabaogom',
 		'ghichu'
 	];
+
+ public function hoadon(): HasMany
+    {
+        return $this->hasMany(Hoadon::class);
+    }
+
+
+     public function thanhtoan(): HasMany
+    {
+        return $this->hasMany(Thanhtoan::class);
+    }
 }

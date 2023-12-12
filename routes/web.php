@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\SoctoolController;
-
+use App\Http\Controllers\DuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +22,4 @@ Route::get('/', function () {
 });
 
 Route::get('soctool', [SoctoolController::class, 'index']);
+Route::get('duan', [DuanController::class, 'index']);
