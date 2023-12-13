@@ -43,7 +43,48 @@ class DuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       
+
+    // add other fields
+        
+        if ($request['id'] == null) {
+            $duan= new Duan();
+            $duan->tenduan= $request['tenduan'];
+            $duan->mota= $request['mota'];
+            $duan->tenkhachhang= $request['tenkhachhang'];
+            $duan->diachi= $request['diachi'];
+            $duan->thongtinlanhdao= $request['thongtinlanhdao'];
+            $duan->thongtinketoan= $request['thongtinketoan'];
+            $duan->thongtinkythuat= $request['thongtinkythuat'];
+            $duan->masothue= $request['masothue'];
+            $duan->sohopdong= $request['sohopdong'];
+            $duan->ngayhopdong= $request->date('ngayhopdong');
+            $duan->ngayketthuchopdong= $request->date('ngayketthuchopdong');
+            $duan->giatrihopdongchuabaogom= $request['giatrihopdongchuabaogom'];
+            $duan->ghichu= $request['ghichu'];
+            $duan->save();
+        } else {
+            $duan= new Duan::find($request['id'] );
+            $duan->tenduan= $request['tenduan'];
+            $duan->mota= $request['mota'];
+            $duan->tenkhachhang= $request['tenkhachhang'];
+            $duan->diachi= $request['diachi'];
+            $duan->thongtinlanhdao= $request['thongtinlanhdao'];
+            $duan->thongtinketoan= $request['thongtinketoan'];
+            $duan->thongtinkythuat= $request['thongtinkythuat'];
+            $duan->masothue= $request['masothue'];
+            $duan->sohopdong= $request['sohopdong'];
+            $duan->ngayhopdong= $request->date('ngayhopdong');
+            $duan->ngayketthuchopdong= $request->date('ngayketthuchopdong');
+            $duan->giatrihopdongchuabaogom= $request['giatrihopdongchuabaogom'];
+            $duan->ghichu= $request['ghichu'];
+            $duan->save();
+            
+        }
+
+        $data = DB::table('duans')->orderBy('id', 'ASC')->get();
+        return view('index', compact('data'));
     }
 
     /**

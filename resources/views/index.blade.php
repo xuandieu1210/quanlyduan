@@ -122,76 +122,90 @@
     <div class="col-sm-8 col-md-offset-1">
         <div class="container">
 
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="{{ route('duan.store') }}">
+            @csrf
+            <input type="hidden"  class="form-control" id = "id" name="id">
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Tên dự án:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+              <input type="text" class="form-control" name="tenduan" placeholder="Enter tenduan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Mô tả:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="mota" placeholder="Enter mota">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Chủ đầu tư:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="tenkhachhang" placeholder="Enter tenkhachhang">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Địa chỉ:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="diachi" placeholder="Enter diachi">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin lãnh đạo:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="thongtinlanhdao" placeholder="Enter thongtinlanhdao">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kế toán:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="thongtinketoan" placeholder="Enter thongtinketoan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kỹ thuật:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="thongtinkythuat" placeholder="Enter thongtinkythuat">
             </div>
           </div>
           <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Mã số thuế:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="masothue" placeholder="Enter masothue">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Số hợp đồng:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="sohopdong" placeholder="Enter sohopdong">
+            </div>
+          </div>
+
+          <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Ngày hợp đồng:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="date" class="form-control" name="ngayhopdong" placeholder="Enter ngayhopdong">
             </div>
              <label class="control-label col-sm-2" for="pwd">Ngày kết thúc:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="date" class="form-control" name="ngayketthuchopdong" placeholder="Enter ngayketthuchopdong">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Giá trị hợp đồng:</label>
             <div class="col-sm-10">          
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="number" class="form-control" name="giatrihopdongchuabaogom" placeholder="Enter giatrihopdongchuabaogom">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">GHi chú:</label>
+            <div class="col-sm-10">          
+              <input type="text" class="form-control" name="ghichu" placeholder="Enter ghichu">
             </div>
           </div>
 
           <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">        
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default">Lưu</button>
             </div>
           </div>
         </form>
@@ -236,7 +250,7 @@
 
                    <div class=" card-content table-responsive">
 
-                       <table id="example" class="table table-striped table-bordered" style="width:100%">
+                       <table id="list" class="table table-striped table-bordered" style="width:100%">
 
 
 
@@ -250,21 +264,19 @@
                               <th >Ngày hợp đồng</th>
                               <th >Ngày kết thúc</th>
                               <th >Giá trị hợp đồng</th>
-                              <th >.....</th>
                             </tr>
                           </thead>
                           <tbody>
                             @foreach($data as $index => $row)
                             <tr>
-                              <th scope="row">{{$index}}</th>
-                              <td>{{$row->tenduan}}</td>
-                              <td>{{$row->mota}}</td>
-                              <td> {{$row->tenkhachhang}}</td>
-                              <td>{{$row->diachi}}</td>
-                              <td>{{$row->ngayhopdong}}</td>
-                              <td>{{$row->ngayketthuchopdong}}</td>
-                              <td>{{$row->giatrihopdongchuabaogom}}</td>
-                              <td> <a href="" class="btn btn-primary">Sửa</a></td>
+                              <th id= "{{$row->id}}" scope="row">{{$index}}</th>
+                              <td id= "{{$row->id}}">{{$row->tenduan}}</td>
+                              <td id= "{{$row->id}}">{{$row->mota}}</td>
+                              <td id= "{{$row->id}}"> {{$row->tenkhachhang}}</td>
+                              <td id= "{{$row->id}}">{{$row->diachi}}</td>
+                              <td id= "{{$row->id}}">{{$row->ngayhopdong}}</td>
+                              <td id= "{{$row->id}}">{{$row->ngayketthuchopdong}}</td>
+                              <td id= "{{$row->id}}">{{$row->giatrihopdongchuabaogom}}</td>
                             </tr>
                            @endforeach
                           </tbody>
@@ -291,6 +303,10 @@
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-
+<script>
+    $("#list td").on("click", function(cell){
+        $("#id").val( this.id)
+    })
+</script>
 </body>
 </html>

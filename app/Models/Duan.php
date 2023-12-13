@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Duan extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $fillable = [
 		'tenduan',
 		'mota',

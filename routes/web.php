@@ -22,4 +22,4 @@ Route::get('/', function () {
 });
 
 Route::get('soctool', [SoctoolController::class, 'index']);
-Route::get('duan', [DuanController::class, 'index']);
+Route::resource('duan', DuanController::class);
