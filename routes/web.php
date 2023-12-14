@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SoctoolController;
 use App\Http\Controllers\DuanController;
+use App\Http\Controllers\KehoachController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,7 @@ use App\Http\Controllers\DuanController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [KehoachController::class, 'index']);
 
 Route::get('soctool', [SoctoolController::class, 'index']);
 Route::resource('duan', DuanController::class);

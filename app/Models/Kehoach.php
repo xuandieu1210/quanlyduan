@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hoadon extends Model
+class Kehoach extends Model
 {
     use HasFactory;
     public $timestamps = false;
-     protected $fillable = [
-		'ngayxuat',
-		'sotien',
-		'idduan'
-	];
+
+    protected $fillable = [
+        'nam',
+        'dutoan'
+
+    ];
 }
