@@ -23,7 +23,8 @@ class KehoachController extends Controller
         $kehoach = DB::table('kehoachs')->where('nam', $nam)->first();
         $ketqua = DB::table('hoadons')->whereYear('ngayxuat', $nam)->sum('sotien');
         $ketquathang = DB::table('hoadons')->whereYear('ngayxuat', $nam)->get();
-
+        $giatrikh = $kehoach->kehoach;;
+        $tyle = $ketqua / $giatrikh;
         $orders = Hoadon::select(
                     DB::raw('sum(sotien) as sums'), 
                     DB::raw("DATE_FORMAT(ngayxuat,'%m') as monthKey")
@@ -33,15 +34,50 @@ class KehoachController extends Controller
           ->orderBy('monthKey', 'ASC')
           ->get();
 
-          $datakq = [0,0,0,0,0,0,0,0,0,0,0, 0];
+          // $datakq = [
+          //   [
+          //       'Tháng 1', 0
+          //   ], 
+          //               [
+          //       'Tháng 2', 0
+          //   ], 
+          //               [
+          //       'Tháng 3', 0
+          //   ], 
+          //               [
+          //       'Tháng 4', 0
+          //   ], 
+          //               [
+          //       'Tháng 5', 0
+          //   ], 
+          //               [
+          //       'Tháng 6', 0
+          //   ], 
+          //               [
+          //       'Tháng 7', 0
+          //   ], 
+          //               [
+          //       'Tháng 8', 0
+          //   ], 
+          //               [
+          //       'Tháng 9', 0
+          //   ], 
+          //               [
+          //       'Tháng 10', 0
+          //   ], 
+          //               [
+          //       'Tháng 11', 0
+          //   ], 
+          //               [
+          //       'Tháng 12', 0
+          //   ]];
 
-            foreach($orders as $order){
-                $datakq[$order->monthKey - 1] = $order->sums;
-            }
+        $datakq = [0,0,0,0,0,0,0,0,0,0,0,0];
+        foreach($orders as $order){
+            $datakq[$order->monthKey - 1] = $order->sums;
+        }
 
-        dd($datakq);
 
-
-        return view('index', compact('data'));
+        return view('chart', compact('kehoach', 'giatrikh','ketqua', 'datakq' , 'tyle'));
     }
 }
