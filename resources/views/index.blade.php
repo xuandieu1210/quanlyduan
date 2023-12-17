@@ -51,14 +51,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">QLDA</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/duan">Dự án</a></li>
+        <li><a href="/hoadon">Hóa đơn</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -128,78 +127,76 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Tên dự án:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="tenduan" placeholder="Enter tenduan">
+              <input type="text" class="form-control" name="tenduan" id="tenduan" placeholder="Enter tenduan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Mô tả:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="mota" placeholder="Enter mota">
+              <input type="text" class="form-control" name="mota"  id="mota" placeholder="Enter mota">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Chủ đầu tư:</label>
-            <div class="col-sm-10">          
-              <input type="text" class="form-control" name="tenkhachhang" placeholder="Enter tenkhachhang">
+            <div class="col-sm-4">          
+              <input type="text" class="form-control" name="tenkhachhang" id="tenkhachhang" placeholder="Enter tenkhachhang">
+            </div>
+            <label class="control-label col-sm-2" for="pwd">Mã số thuế:</label>
+            <div class="col-sm-4">          
+              <input type="text" class="form-control" name="masothue" id="masothue" placeholder="Enter masothue">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Địa chỉ:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="diachi" placeholder="Enter diachi">
+              <input type="text" class="form-control" name="diachi" id="diachi" placeholder="Enter diachi">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin lãnh đạo:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinlanhdao" placeholder="Enter thongtinlanhdao">
+              <input type="text" class="form-control" name="thongtinlanhdao" id="thongtinlanhdao" placeholder="Enter thongtinlanhdao">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kế toán:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinketoan" placeholder="Enter thongtinketoan">
+              <input type="text" class="form-control" name="thongtinketoan" id="thongtinketoan" placeholder="Enter thongtinketoan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kỹ thuật:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinkythuat" placeholder="Enter thongtinkythuat">
+              <input type="text" class="form-control" name="thongtinkythuat" id="thongtinkythuat" placeholder="Enter thongtinkythuat">
             </div>
           </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Mã số thuế:</label>
-            <div class="col-sm-10">          
-              <input type="text" class="form-control" name="masothue" placeholder="Enter masothue">
-            </div>
-          </div>
+
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Số hợp đồng:</label>
-            <div class="col-sm-10">          
-              <input type="text" class="form-control" name="sohopdong" placeholder="Enter sohopdong">
+            <div class="col-sm-4">          
+              <input type="text" class="form-control" name="sohopdong" id="sohopdong" placeholder="Enter sohopdong">
+            </div>
+             <label class="control-label col-sm-2" for="pwd">Giá trị hợp đồng:</label>
+            <div class="col-sm-4">          
+              <input type="number" class="form-control" name="giatrihopdongchuabaogom" id="giatrihopdongchuabaogom" placeholder="Enter giatrihopdongchuabaogom">
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Ngày hợp đồng:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" name="ngayhopdong" placeholder="Enter ngayhopdong">
+              <input type="date" class="form-control" name="ngayhopdong" id="ngayhopdong" placeholder="Enter ngayhopdong">
             </div>
              <label class="control-label col-sm-2" for="pwd">Ngày kết thúc:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" name="ngayketthuchopdong" placeholder="Enter ngayketthuchopdong">
+              <input type="date" class="form-control" name="ngayketthuchopdong" id="ngayketthuchopdong" placeholder="Enter ngayketthuchopdong">
             </div>
           </div>
+          
           <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Giá trị hợp đồng:</label>
+            <label class="control-label col-sm-2" for="pwd">Ghi chú:</label>
             <div class="col-sm-10">          
-              <input type="number" class="form-control" name="giatrihopdongchuabaogom" placeholder="Enter giatrihopdongchuabaogom">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">GHi chú:</label>
-            <div class="col-sm-10">          
-              <input type="text" class="form-control" name="ghichu" placeholder="Enter ghichu">
+              <input type="text" class="form-control" name="ghichu" id="ghichu" placeholder="Enter ghichu">
             </div>
           </div>
 
@@ -212,11 +209,44 @@
       </div>
     </div>
     <div class="col-sm-2 text-left"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+           <div class=" card-content table-responsive">
+            <p> Hóa đơn </p>
+
+                       <table id="list" class="table table-striped table-bordered" style="width:100%">
+
+                          <thead>
+                            <tr>
+                              <th >STT</th>
+                              <th >Số tiền</th>
+                              <th >Ngày xuất</th>
+                            </tr>
+                          </thead>
+                          <tbody id = "hoadon-table">                          
+  
+                          </tbody>
+                       </table>
+
+
+        </div>
+         <div class=" card-content table-responsive">
+            <p> Lịch sử thanh toán </p>
+
+                       <table id="list" class="table table-striped table-bordered" style="width:100%">
+
+                          <thead>
+                            <tr>
+                              <th >STT</th>
+                              <th >Số tiền</th>
+                              <th >Ngày thanh toán</th>
+                            </tr>
+                          </thead>
+                          <tbody id = "hoadon-table">                          
+  
+                          </tbody>
+                       </table>
+
+            <p id= "conlai"> </p>
+        </div>
     </div>
     
   </div>
@@ -241,7 +271,7 @@
 
                <div class="card-header bgsize-primary-4 white card-header">
 
-                   <h4 class="card-title">Danh sách</h4>
+                   <h4 class="card-title">Danh sách dự án</h4>
 
                </div>
 
@@ -268,6 +298,7 @@
                           </thead>
                           <tbody>
                             @foreach($data as $index => $row)
+                            
                             <tr>
                               <th id= "{{$row->id}}" scope="row">{{$index}}</th>
                               <td id= "{{$row->id}}">{{$row->tenduan}}</td>
@@ -306,6 +337,41 @@
 <script>
     $("#list td").on("click", function(cell){
         $("#id").val( this.id)
+       $('#hoadon-table').html('');
+        var _token = $("input[name='_token']").val();
+        $.ajax({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+               type:'POST',
+               url:"{{ url('ajax') }}",
+               data:{'_token' :  _token, 'id' : this.id},
+               success:function(data) {
+                  var duan =  data.duan
+                  var conlai = data.conlai
+                  $('#tenduan').val(duan['tenduan']);
+                  $('#mota').val(duan['mota']);
+                  $('#tenkhachhang').val(duan['tenkhachhang']);
+                  $('#diachi').val(duan['diachi']);
+                   $('#thongtinlanhdao').val(duan['thongtinlanhdao']);
+                  $('#thongtinketoan').val(duan['thongtinketoan']);
+                  $('#thongtinkythuat').val(duan['thongtinkythuat']);
+                  $('#masothue').val(duan['masothue']);
+                  $('#sohopdong').val(duan['sohopdong']);
+                  $('#ngayhopdong').val(duan['ngayhopdong']);
+                  $('#ngayketthuchopdong').val(duan['ngayketthuchopdong']);
+                  $('#giatrihopdongchuabaogom').val(duan['giatrihopdongchuabaogom']);
+                  $('#ghichu').val(duan['ghichu']);
+                  $("#conlai").text('CÒN LẠI: ' + conlai + ' VNĐ')
+                  var hoadon = data.hoadon
+                 
+                  for (let i = 0; i < hoadon.length; i++) {
+                    htmltable = '<tr><th >'+i+'</th ><td >'+hoadon[i]["sotien"]+'</td><td >'+hoadon[i]["ngayxuat"]+'</td></tr';
+                    $("#hoadon-table").append(htmltable)
+                  }
+                  
+               }
+         });
     })
 </script>
 </body>

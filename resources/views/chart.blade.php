@@ -53,14 +53,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="https://upload.wikimedia.org/wikipedia/vi/6/65/VNPT_Logo.svg">QLDA</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/duan">Dự án</a></li>
+        <li><a href="/hoadon">Hóa đơn</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -133,7 +132,7 @@ var data = [
   {
     domain: { x: [0, 1], y: [0, 1] },
     value: <?php echo json_encode($ketqua, JSON_NUMERIC_CHECK); ?> ,
-    title: { text: "Kết quả thực hiện đến tháng hiện tại so với kế hoạch" },
+    title: { text: "Doanh thu đến tháng hiện tại so với kế hoạch" },
     type: "indicator",
     mode: "gauge+number+delta",
     gauge: {

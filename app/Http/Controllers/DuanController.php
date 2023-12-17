@@ -22,6 +22,7 @@ class DuanController extends Controller
         //      ->get();
 
         $data = DB::table('duans')->orderBy('id', 'ASC')->get();
+
         return view('index', compact('data'));
     }
 
@@ -65,7 +66,7 @@ class DuanController extends Controller
             $duan->ghichu= $request['ghichu'];
             $duan->save();
         } else {
-            $duan= new Duan::find($request['id'] );
+            $duan= Duan::find($request['id'] );
             $duan->tenduan= $request['tenduan'];
             $duan->mota= $request['mota'];
             $duan->tenkhachhang= $request['tenkhachhang'];
@@ -130,5 +131,22 @@ class DuanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function ajax(Request $request)
+    {
+
+
+        $duan= Duan::find($request['id'] );
+        $hoadon = DB::table('hoadons')->where('idduan', $request['id'])->orderBy('id', 'ASC')->get();
+        $thanhtoan = DB::table('thanhtoans')->where('idduan', $request['id'])->orderBy('id', 'ASC')->get();
+
+        $hoadonxuat = DB::table('hoadons')->where('idduan', $request['id'])->sum('sotien');
+        $dathanhtoan = DB::table('thanhtoans')->where('idduan', $request['id'])->sum('sotien');
+        $conlai =  $hoadonxuat- $dathanhtoan;
+        return response()->json(['duan' => $duan, 'hoadon' => $hoadon, 'thantoan' => $thanhtoan, 'conlai' =>$conlai]);
+
+
     }
 }

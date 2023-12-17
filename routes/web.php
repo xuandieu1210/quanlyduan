@@ -22,3 +22,4 @@ Route::get('/', [KehoachController::class, 'index']);
 
 Route::get('soctool', [SoctoolController::class, 'index']);
 Route::resource('duan', DuanController::class);
+Route::post('/ajax', [DuanController::class, 'ajax'])->name('ajax');;
