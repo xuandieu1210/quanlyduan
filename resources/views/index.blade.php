@@ -58,6 +58,7 @@
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/duan">Dự án</a></li>
         <li><a href="/hoadon">Hóa đơn</a></li>
+        <li><a href="/thanhtoan">Thanh toán</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -127,76 +128,76 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Tên dự án:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="tenduan" id="tenduan" placeholder="Enter tenduan">
+              <input type="text" class="form-control" name="tenduan" id="tenduan" placeholder="Tên dự án">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Mô tả:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="mota"  id="mota" placeholder="Enter mota">
+              <input type="text" class="form-control" name="mota"  id="mota" placeholder="Mô tả">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Chủ đầu tư:</label>
             <div class="col-sm-4">          
-              <input type="text" class="form-control" name="tenkhachhang" id="tenkhachhang" placeholder="Enter tenkhachhang">
+              <input type="text" class="form-control" name="tenkhachhang" id="tenkhachhang" placeholder="Chủ đầu tư">
             </div>
             <label class="control-label col-sm-2" for="pwd">Mã số thuế:</label>
             <div class="col-sm-4">          
-              <input type="text" class="form-control" name="masothue" id="masothue" placeholder="Enter masothue">
+              <input type="text" class="form-control" name="masothue" id="masothue" placeholder="Mã số thuế">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Địa chỉ:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="diachi" id="diachi" placeholder="Enter diachi">
+              <input type="text" class="form-control" name="diachi" id="diachi" placeholder="Địa chỉ">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin lãnh đạo:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinlanhdao" id="thongtinlanhdao" placeholder="Enter thongtinlanhdao">
+              <input type="text" class="form-control" name="thongtinlanhdao" id="thongtinlanhdao" placeholder="Thông tin lãnh đạo">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kế toán:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinketoan" id="thongtinketoan" placeholder="Enter thongtinketoan">
+              <input type="text" class="form-control" name="thongtinketoan" id="thongtinketoan" placeholder="Thông tin kế toán">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Thông tin kỹ thuật:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="thongtinkythuat" id="thongtinkythuat" placeholder="Enter thongtinkythuat">
+              <input type="text" class="form-control" name="thongtinkythuat" id="thongtinkythuat" placeholder="Thông tin kỹ thuật">
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Số hợp đồng:</label>
             <div class="col-sm-4">          
-              <input type="text" class="form-control" name="sohopdong" id="sohopdong" placeholder="Enter sohopdong">
+              <input type="text" class="form-control" name="sohopdong" id="sohopdong" placeholder="Số hợp đồng">
             </div>
              <label class="control-label col-sm-2" for="pwd">Giá trị hợp đồng:</label>
             <div class="col-sm-4">          
-              <input type="number" class="form-control" name="giatrihopdongchuabaogom" id="giatrihopdongchuabaogom" placeholder="Enter giatrihopdongchuabaogom">
+              <input type="number" class="form-control" name="giatrihopdongchuabaogom" id="giatrihopdongchuabaogom" placeholder="Giá trị hợp đồng">
             </div>
           </div>
 
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Ngày hợp đồng:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" name="ngayhopdong" id="ngayhopdong" placeholder="Enter ngayhopdong">
+              <input type="date" class="form-control" name="ngayhopdong" id="ngayhopdong" placeholder="Ngày hợp đồng">
             </div>
              <label class="control-label col-sm-2" for="pwd">Ngày kết thúc:</label>
             <div class="col-sm-4">          
-              <input type="date" class="form-control" name="ngayketthuchopdong" id="ngayketthuchopdong" placeholder="Enter ngayketthuchopdong">
+              <input type="date" class="form-control" name="ngayketthuchopdong" id="ngayketthuchopdong" placeholder="Ngày kết thúc">
             </div>
           </div>
           
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Ghi chú:</label>
             <div class="col-sm-10">          
-              <input type="text" class="form-control" name="ghichu" id="ghichu" placeholder="Enter ghichu">
+              <input type="text" class="form-control" name="ghichu" id="ghichu" placeholder="Ghi chú">
             </div>
           </div>
 
@@ -245,7 +246,7 @@
                           </tbody>
                        </table>
 
-            <p id= "conlai"> </p>
+            <p id= "conlai" style="color: red;"> </p>
         </div>
     </div>
     

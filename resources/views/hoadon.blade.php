@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-  <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -53,7 +51,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="https://upload.wikimedia.org/wikipedia/vi/6/65/VNPT_Logo.svg">QLDA</a>
+      <a class="navbar-brand" href="#">QLDA</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -120,59 +118,128 @@
  -->
 </br>
 
-<div style="  margin: auto;width: 50%; height: 350px;" id='myDiv'>
 </br>
-<div style="height: 500px;" id='myDiv2'>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-8 col-md-offset-1">
+        <div class="container">
 
+        <form class="form-horizontal" method="post" action="{{ route('hoadon.store') }}">
+            @csrf
+            <input type="hidden"  class="form-control" id = "id" name="id">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Tên dự án:</label>
+            <div class="col-sm-10">
+                                     
+             <div class="form-check">
+                <select class="form-control" name='idduan'>
+                 @foreach($duan as $index => $da)
+                      <option value="{{ $da->id }}">{{ $da->tenduan }}</option>
+                  @endforeach
+                  </select>
+             </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Số tiền</label>
+            <div class="col-sm-10">          
+              <input type="number" class="form-control" name="sotien"  id="mota" placeholder="Enter mota">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Ngày xuất:</label>
+            <div class="col-sm-10">          
+              <input type="date" class="form-control" name="ngayxuat" id="ngayhopdong" placeholder="Enter ngayhopdong">
+            </div>
+          
+          </div>
+
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Lưu</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+   <div class="row justify-content-left">
+
+       <div class="col-md-10 col-md-offset-1">
+
+           <br />
+
+           <div class="card">
+
+               <div class="card-header bgsize-primary-4 white card-header">
+
+                   <h4 class="card-title">Danh sách hóa đơn đã xuất</h4>
+
+               </div>
+
+               <div class="card-body">
+
+
+                   <div class=" card-content table-responsive">
+
+                       <table id="list" class="table table-striped table-bordered" style="width:100%">
+
+
+
+                          <thead>
+                            <tr>
+                              <th >STT</th>
+                              <th >Tên Dự án</th>
+                              <th >Số tiền</th>
+                              <th >Ngày xuất</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach($data as $index => $row)
+                            
+                            <tr>
+                              <th id= "{{$row->id}}" scope="row">{{$index}}</th>
+                              <td id= "{{$row->id}}">{{$row->tenduan}}</td>
+                              <td id= "{{$row->id}}">{{$row->sotien}}</td>
+                              <td id= "{{$row->id}}"> {{$row->ngayxuat}}</td>
+                            </tr>
+                           @endforeach
+                          </tbody>
+
+
+
+
+                       </table>
+
+
+                   </div>
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+
+
+   </div>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-<script>
-var data = [
-  {
-    domain: { x: [0, 1], y: [0, 1] },
-    value: <?php echo json_encode($ketqua, JSON_NUMERIC_CHECK); ?> ,
-    title: { text: "Doanh thu đến tháng hiện tại so với kế hoạch" },
-    type: "indicator",
-    mode: "gauge+number+delta",
-    gauge: {
-      axis: { range: [null, <?php echo json_encode($giatrikh, JSON_NUMERIC_CHECK); ?>] },
-      
-    },
-     threshold: {
-        line: { color: "red", width: 4 },
-        thickness: 0.75,
-        value: <?php echo json_encode($giatrikh, JSON_NUMERIC_CHECK); ?>
-      }
-  }
-];
 
-Plotly.newPlot('myDiv', data);
-
-var trace1 = {
-  type: 'bar',
-  x: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 11','Tháng 11','Tháng 12'],
-  y: <?php echo json_encode($datakq, JSON_NUMERIC_CHECK); ?>,
-  text: <?php echo json_encode($datakq, JSON_NUMERIC_CHECK); ?>,
-  marker: {
-      color: '#C8A2C8',
-      line: {
-          width: 2.5
-      }
-  }
-};
-
-var data2 = [ trace1 ];
-
-var layout2 = { 
-  title: 'Doanh thu theo các tháng',
-  font: {size: 15}
-};
-
-var config = {responsive: true , hovermode: false}
-
-Plotly.newPlot('myDiv2', data2, layout2, config );
-</script>
 </body>
 </html>

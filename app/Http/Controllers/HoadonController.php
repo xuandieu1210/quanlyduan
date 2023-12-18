@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Hoadon;
+use Illuminate\Support\Facades\DB;
 
 class HoadonController extends Controller
 {
@@ -13,7 +15,11 @@ class HoadonController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('hoadons')->orderBy('id', 'ASC')->join('duans', 'duans.id', '=', 'hoadons.idduan')
+            ->select('hoadons.*', 'duans.tenduan')
+            ->get();
+        $duan = DB::table('duans')->orderBy('id', 'ASC')->get();
+        return view('hoadon', compact('data', 'duan'));
     }
 
     /**
@@ -34,7 +40,28 @@ class HoadonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+           // add other fields
+        
+        if ($request['id'] == null) {
+            $hoadon= new Hoadon();
+            $hoadon->idduan= $request['idduan'];
+            $hoadon->sotien= $request['sotien'];
+            $hoadon->ngayxuat= $request['ngayxuat'];
+            $hoadon->save();
+        } else {
+            $hoadon= Duan::find($request['idduan'] );
+            $hoadon->idduan= $request['idduan'];
+            $hoadon->sotien= $request['sotien'];
+            $hoadon->ngayxuat= $request['ngayxuat'];
+            $hoadon->save();
+            
+        }
+
+        $data = DB::table('hoadons')->orderBy('id', 'ASC')->join('duans', 'duans.id', '=', 'hoadons.idduan')
+            ->select('hoadons.*', 'duans.tenduan')
+            ->get();
+        $duan = DB::table('duans')->orderBy('id', 'ASC')->get();
+        return view('hoadon', compact('data', 'duan'));
     }
 
     /**

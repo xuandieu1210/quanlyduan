@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Thanhtoan;
+use Illuminate\Support\Facades\DB;
 
 class ThanhtoanController extends Controller
 {
@@ -13,7 +15,11 @@ class ThanhtoanController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('thanhtoans')->orderBy('id', 'ASC')->join('duans', 'duans.id', '=', 'thanhtoans.idduan')
+            ->select('thanhtoans.*', 'duans.tenduan')
+            ->get();
+        $duan = DB::table('duans')->orderBy('id', 'ASC')->get();
+        return view('thanhtoan', compact('data', 'duan'));
     }
 
     /**
@@ -34,7 +40,30 @@ class ThanhtoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+           // add other fields
+        
+        if ($request['id'] == null) {
+            $thanhtoan= new Thanhtoan();
+            $thanhtoan->idduan= $request['idduan'];
+            $thanhtoan->sotien= $request['sotien'];
+            $thanhtoan->ngay= $request['ngay'];
+            $thanhtoan->ghichu= $request['ghichu'];
+            $thanhtoan->save();
+        } else {
+            $thanhtoan= Thanhtoan::find($request['idduan'] );
+            $thanhtoan->idduan= $request['idduan'];
+            $thanhtoan->sotien= $request['sotien'];
+            $thanhtoan->ngay= $request['ngay'];
+            $thanhtoan->ghichu= $request['ghichu'];
+            $thanhtoan->save();
+            
+        }
+
+        $data = DB::table('thanhtoans')->orderBy('id', 'ASC')->join('duans', 'duans.id', '=', 'thanhtoans.idduan')
+            ->select('thanhtoans.*', 'duans.tenduan')
+            ->get();
+        $duan = DB::table('duans')->orderBy('id', 'ASC')->get();
+        return view('thanhtoan', compact('data', 'duan'));
     }
 
     /**

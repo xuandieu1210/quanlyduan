@@ -11,7 +11,7 @@ class Thanhtoan extends Model
     public $timestamps = false;
      protected $fillable = [
 		'ngay',
-		'sotien'
+		'sotien',
 		'idduan',
 		'ghichu'
 	];

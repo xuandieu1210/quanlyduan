@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SoctoolController;
 use App\Http\Controllers\DuanController;
 use App\Http\Controllers\KehoachController;
+use App\Http\Controllers\HoadonController;
+use App\Http\Controllers\ThanhtoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +24,6 @@ Route::get('/', [KehoachController::class, 'index']);
 
 Route::get('soctool', [SoctoolController::class, 'index']);
 Route::resource('duan', DuanController::class);
+Route::resource('hoadon', HoadonController::class);
+Route::resource('thanhtoan', ThanhtoanController::class);
 Route::post('/ajax', [DuanController::class, 'ajax'])->name('ajax');;
