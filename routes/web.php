@@ -22,7 +22,7 @@ use App\Http\Controllers\ThanhtoanController;
 
 Route::get('/', [KehoachController::class, 'index']);
 
-Route::get('soctool', [SoctoolController::class, 'index']);
+Route::resource('soctool', SoctoolController::class);
 Route::resource('duan', DuanController::class);
 Route::resource('hoadon', HoadonController::class);
 Route::resource('thanhtoan', ThanhtoanController::class);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Soc;
 
 class SoctoolController extends Controller
 {
@@ -14,7 +15,7 @@ class SoctoolController extends Controller
      */
     public function index()
     {
-        $data = DB::table('soc')->orderBy('id', 'ASC')->get();
+        $data = DB::table('socs')->orderBy('id', 'ASC')->get();
         return view('soctool', compact('data'));
     }
 
@@ -36,7 +37,14 @@ class SoctoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $post = Soc::find($request['id']);
+        $post->dieuchinh = $request['dieuchinh'];
+        $post->soluongcaidat = $request['soluongcaidat'];
+        $post->soluongbienban = $request['soluongbienban'];
+        $post->save();
+                $data = DB::table('socs')->orderBy('id', 'ASC')->get();
+        return view('soctool', compact('data'));
     }
 
     /**
@@ -70,7 +78,7 @@ class SoctoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

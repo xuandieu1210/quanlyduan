@@ -108,7 +108,7 @@
 
                    <div class="pull-right">
 
-                       <a href="" class="btn btn-primary" style="margin-left:85%">Xuất file</a>
+                       <a href="" class="btn btn-primary" style="margin-left:85%">Xuất file báo cáo</a>
 
                    </div>
 
@@ -127,23 +127,27 @@
                               <th >SL đã cài</th>
                               <th >SL thiếu</th>
                               <th >SL biên bản</th>
-                              <th >File biên bản</th>
-                              <th >.....</th>
+                              <th >Up file scan biên bản</th>
+                              <th >Hành động</th>
                             </tr>
                           </thead>
                           <tbody>
                             @foreach($data as $index => $row)
+                         <form class="form-horizontal" method="post" action="{{ route('soctool.store') }}">
+                            @csrf
+                            <input type="hidden"  class="form-control" id = "id" name="id" value="{{$row->id}}">
                             <tr>
                               <th scope="row">{{$index}}</th>
                               <td>{{$row->donvi}}</td>
-                              <td>{{$row->soluonggiao}}</td>
-                              <td><input style="width: 50px" type="text" id="fname" name="fname" value="{{$row->dieuchinh}}"/> </td>
-                              <td><input style="width: 50px" type="text" id="fname" name="fname" value="{{$row->soluongcaidat}}"/></td>
-                              <td>{{$row->soluongthieu}}</td>
-                              <td><input style="width: 50px" type="text" id="fname" name="fname" value="{{$row->soluongbienban}}"/></td>
-                              <td>{{$row->soluongbienban}}</td>
-                              <td><input type="file" required class="form-control" name="uploaded_file" id="uploaded_file"> <a href="" class="btn btn-primary">Lưu</a></td>
+                              <td style=" color: red">{{$row->soluonggiao}}</td>
+                              <td><input style="width: 50px;" type="number" min="0" id="fname" name="dieuchinh" value="{{$row->dieuchinh}}"/> </td>
+                              <td><input style="width: 50px" type="number" min="0" id="fname" name="soluongcaidat" value="{{$row->soluongcaidat}}"/></td>
+                              <td style=" color: green;">{{$row->soluongthieu}}</td>
+                              <td><input style="width: 50px" type="number" min="0" id="fname" name="soluongbienban" value="{{$row->soluongbienban}}"/></td>
+                              <td><input type="file" class="form-control" name="linkfile" id="uploaded_file"> </td>
+                              <td> <button type="submit" class="btn btn-default">Lưu</button></td>
                             </tr>
+                            </form>
                            @endforeach
                           </tbody>
 

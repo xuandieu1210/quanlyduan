@@ -143,13 +143,13 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Số tiền</label>
             <div class="col-sm-10">          
-              <input type="number" class="form-control" name="sotien"  id="mota" placeholder="Enter mota">
+              <input type="number" class="form-control" name="sotien"  id="mota" placeholder="Số tiền">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Ngày thanh toán:</label>
             <div class="col-sm-10">          
-              <input type="date" class="form-control" name="ngay" id="ngayhopdong" placeholder="Enter ngayhopdong">
+              <input type="date" class="form-control" name="ngay" id="ngayhopdong" placeholder="Ngày thanh toán">
             </div>
           
           </div>
